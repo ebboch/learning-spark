@@ -15,9 +15,7 @@ data = [[1, "Jules", "Damji", "https://tinyurl.1", "1/4/2016", 4535, ["twitter",
 
 # main program
 if __name__ == "__main__":
-    spark = (SparkSession.builder
-                .appName("Example-3_6")
-                .getOrCreate())
+    spark = SparkSession.builder.appName("Example-3_6").getOrCreate()
     # create a df using the chema defined above
     blogs_df = spark.createDataFrame(data, schema)
     # show the df

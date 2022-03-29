@@ -11,13 +11,11 @@ if __name__ == "__main__":
     schema = "`Id` INT, `First` STRING, `Last` STRING, `Url` STRING,"\
     "`Published` STRING, `Hits` INT, `Campaigns` ARRAY<STRING>"
 
-    spark = (SparkSession.builder
-            .appName("Example-3_7")
-            .getOrCreate())
+    spark = (SparkSession.builder.appName("Example-3_7").getOrCreate())
     blogs_df = spark.read.schema(schema).json(json_file)
     
     blogs_df.show()
-    print(blogs_df.printSchema)
+    print(blogs_df.printSchema())
     print(blogs_df.schema)
 
 #if __name__ == "__main__":
